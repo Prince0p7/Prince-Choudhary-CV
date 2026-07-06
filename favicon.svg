@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" stroke="#dadada" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round">
+  <!-- ears -->
+  <path d="M20 22c-2-6-2-11 0-13 2 2 4 6 4 10" />
+  <path d="M44 22c2-6 2-11 0-13-2 2-4 6-4 10" />
+  <!-- head/body -->
+  <path d="M24 20c-4 3-6 8-6 15 0 10 6 18 14 18s14-8 14-18c0-7-2-12-6-15" />
+  <!-- eyes -->
+  <circle cx="27" cy="30" r="1.4" fill="#dadada" stroke="none" />
+  <circle cx="37" cy="30" r="1.4" fill="#dadada" stroke="none" />
+  <!-- nose + whiskers -->
+  <path d="M32 34v3" />
+  <path d="M22 33h6M42 33h-6" />
+</svg>

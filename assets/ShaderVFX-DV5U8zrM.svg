@@ -1,0 +1,121 @@
+<svg width="600" height="400" viewBox="0 0 600 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Dark backdrop with subtle grid -->
+  <rect width="600" height="400" fill="#1C1C1C"/>
+  <pattern id="grid" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#2A2A2A" stroke-width="1"/>
+  </pattern>
+  <rect width="600" height="400" fill="url(#grid)"/>
+
+  <!-- Glowing VFX elements in the background -->
+  <circle cx="450" cy="200" r="100" fill="#EAB308" opacity="0.1" filter="blur(30px)"/>
+  <circle cx="500" cy="150" r="80" fill="#EF4444" opacity="0.2" filter="blur(40px)"/>
+  <circle cx="400" cy="250" r="120" fill="#3B82F6" opacity="0.15" filter="blur(50px)"/>
+
+  <!-- Title/Header -->
+  <g transform="translate(30, 40)">
+    <text x="0" y="0" fill="#E0E0E0" font-family="monospace" font-size="14" font-weight="bold" letter-spacing="1">STYLED_COMBAT_VFX.shadergraph</text>
+    <line x1="0" y1="10" x2="230" y2="10" stroke="#FACC15" stroke-width="2"/>
+  </g>
+
+  <!-- Shader Graph Nodes Representation -->
+  <g transform="translate(30, 80)">
+    
+    <!-- Time Node -->
+    <g transform="translate(0, 0)">
+      <rect x="0" y="0" width="120" height="40" rx="4" fill="#2D2D2D" stroke="#444"/>
+      <rect x="0" y="0" width="120" height="15" rx="4" fill="#4ade80" opacity="0.2"/>
+      <text x="10" y="11" fill="#4ade80" font-family="sans-serif" font-size="9" font-weight="bold">Time</text>
+      <text x="10" y="30" fill="#A0A0A0" font-family="sans-serif" font-size="10">Out (1)</text>
+      <circle cx="120" cy="25" r="4" fill="#4ade80"/>
+    </g>
+
+    <!-- Noise Node -->
+    <g transform="translate(0, 60)">
+      <rect x="0" y="0" width="120" height="70" rx="4" fill="#2D2D2D" stroke="#444"/>
+      <rect x="0" y="0" width="120" height="15" rx="4" fill="#60a5fa" opacity="0.2"/>
+      <text x="10" y="11" fill="#60a5fa" font-family="sans-serif" font-size="9" font-weight="bold">Voronoi Noise</text>
+      <text x="10" y="30" fill="#A0A0A0" font-family="sans-serif" font-size="10">UV</text>
+      <circle cx="0" cy="25" r="4" fill="#60a5fa"/>
+      <text x="10" y="55" fill="#A0A0A0" font-family="sans-serif" font-size="10">Out (1)</text>
+      <circle cx="120" cy="50" r="4" fill="#d8b4fe"/>
+    </g>
+
+    <!-- Multiply Node -->
+    <g transform="translate(170, 30)">
+      <rect x="0" y="0" width="120" height="50" rx="4" fill="#2D2D2D" stroke="#444"/>
+      <rect x="0" y="0" width="120" height="15" rx="4" fill="#facc15" opacity="0.2"/>
+      <text x="10" y="11" fill="#facc15" font-family="sans-serif" font-size="9" font-weight="bold">Multiply</text>
+      <circle cx="0" cy="25" r="4" fill="#4ade80"/>
+      <circle cx="0" cy="40" r="4" fill="#d8b4fe"/>
+      <text x="90" y="35" fill="#A0A0A0" font-family="sans-serif" font-size="10">Out</text>
+      <circle cx="120" cy="30" r="4" fill="#facc15"/>
+    </g>
+
+    <!-- Base Color / Texture -->
+    <g transform="translate(170, 100)">
+       <rect x="0" y="0" width="120" height="50" rx="4" fill="#2D2D2D" stroke="#444"/>
+       <rect x="0" y="0" width="120" height="15" rx="4" fill="#f87171" opacity="0.2"/>
+       <text x="10" y="11" fill="#f87171" font-family="sans-serif" font-size="9" font-weight="bold">Sample Texture 2D</text>
+       <text x="80" y="35" fill="#A0A0A0" font-family="sans-serif" font-size="10">RGBA</text>
+       <circle cx="120" cy="30" r="4" fill="#f87171"/>
+    </g>
+
+    <!-- Master Node -->
+    <g transform="translate(340, 45)">
+      <rect x="0" y="0" width="140" height="110" rx="4" fill="#2D2D2D" stroke="#444"/>
+      <rect x="0" y="0" width="140" height="20" rx="4" fill="#e0e0e0" opacity="0.1"/>
+      <text x="10" y="14" fill="#E0E0E0" font-family="sans-serif" font-size="10" font-weight="bold">Lit Master</text>
+      
+      <circle cx="0" cy="40" r="4" fill="#f87171"/>
+      <text x="10" y="44" fill="#A0A0A0" font-family="sans-serif" font-size="10">Base Color</text>
+      
+      <circle cx="0" cy="70" r="4" fill="#facc15"/>
+      <text x="10" y="74" fill="#A0A0A0" font-family="sans-serif" font-size="10">Emission</text>
+
+      <circle cx="0" cy="95" r="4" fill="#d8b4fe"/>
+      <text x="10" y="99" fill="#A0A0A0" font-family="sans-serif" font-size="10">Alpha / Dissolve</text>
+    </g>
+
+    <!-- Node Connections -->
+    <path d="M 120 25 C 145 25, 145 25, 170 25" fill="none" stroke="#4ade80" stroke-width="2"/>
+    <path d="M 120 110 C 145 110, 145 70, 170 70" fill="none" stroke="#d8b4fe" stroke-width="2"/>
+    <path d="M 290 60 C 315 60, 315 115, 340 115" fill="none" stroke="#facc15" stroke-width="2"/>
+    <path d="M 290 130 C 315 130, 315 85, 340 85" fill="none" stroke="#f87171" stroke-width="2"/>
+
+  </g>
+
+  <!-- Particle / VFX Burst simulation -->
+  <g transform="translate(480, 200)">
+    <path d="M 0 0 L 20 -40" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 0 0 L 45 -15" stroke="#EF4444" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 0 L 35 30" stroke="#F87171" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 0 0 L -10 40" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 0 0 L -30 20" stroke="#F97316" stroke-width="4" stroke-linecap="round"/>
+    <path d="M 0 0 L -40 -15" stroke="#EF4444" stroke-width="2" stroke-linecap="round"/>
+    <path d="M 0 0 L -25 -35" stroke="#FACC15" stroke-width="3" stroke-linecap="round"/>
+    
+    <!-- Sparkles -->
+    <circle cx="30" cy="-50" r="3" fill="#FFF"/>
+    <circle cx="60" cy="10" r="2" fill="#FACC15"/>
+    <circle cx="-20" cy="50" r="3" fill="#EF4444"/>
+    <circle cx="-50" cy="-20" r="2" fill="#FFF"/>
+    <circle cx="-10" cy="-55" r="4" fill="#FACC15"/>
+  </g>
+
+  <!-- Shader Code overlay -->
+  <g transform="translate(30, 290)">
+    <rect x="0" y="0" width="280" height="70" rx="4" fill="#141414" stroke="#333"/>
+    <text x="10" y="20" fill="#E5C07B" font-family="monospace" font-size="10">float4</text>
+    <text x="55" y="20" fill="#61AFEF" font-family="monospace" font-size="10">frag</text>
+    <text x="80" y="20" fill="#E0E0E0" font-family="monospace" font-size="10">(v2f i) : SV_Target {</text>
+    
+    <text x="20" y="35" fill="#E5C07B" font-family="monospace" font-size="10">float2</text>
+    <text x="65" y="35" fill="#E0E0E0" font-family="monospace" font-size="10">distortion =</text>
+    <text x="145" y="35" fill="#56B6C2" font-family="monospace" font-size="10">tex2D</text>
+    <text x="175" y="35" fill="#E0E0E0" font-family="monospace" font-size="10">(_Noise, i.uv).xy;</text>
+
+    <text x="20" y="55" fill="#C678DD" font-family="monospace" font-size="10">return</text>
+    <text x="65" y="55" fill="#56B6C2" font-family="monospace" font-size="10">tex2D</text>
+    <text x="95" y="55" fill="#E0E0E0" font-family="monospace" font-size="10">(_MainTex, i.uv + distortion);</text>
+  </g>
+</svg>

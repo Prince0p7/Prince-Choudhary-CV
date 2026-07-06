@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <script>
+      (function () {
+        var r = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (r && r !== location.href) {
+          history.replaceState(null, '', r);
+        }
+      })();
+    </script>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/Prince-Choudhary-CV/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prince Choudhary Portfolio</title>
+    <script type="module" crossorigin src="/Prince-Choudhary-CV/assets/index-C01JpI1u.js"></script>
+    <link rel="stylesheet" crossorigin href="/Prince-Choudhary-CV/assets/index-DV3SVgDO.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
